@@ -4,8 +4,10 @@ const express = require("express");
 const multer = require("multer");
 const fs = require("fs");
 const { convertToWav, transcribeWav } = require("./transcribe");
+const { analyzeText, errorReason } = require("./analyze"); // NEW
 
 const app = express();
+app.use(express.json()); // NEW
 
 const upload = multer({
   dest: "temp_audio/",
@@ -41,10 +43,28 @@ app.post("/transcribe", upload.single("audio"), async (req, res) => {
   }
 });
 
-// Turns multer's "file too large" error into a clean 413 response.
+// NEW: the whole /analyze route
+app.post("/analyze", async (req, res) => {
+  try {
+    res.json(await analyzeText(req.body?.text));
+  } catch (err) {
+    if (err.code === "BAD_INPUT") {
+      return res.status(400).json({ error: err.message });
+    }
+    console.error(err);
+    res
+      .status(502)
+      .json({ error: "Language analysis failed.", detail: errorReason(err) });
+  }
+});
+
 app.use((err, req, res, next) => {
   if (err.code === "LIMIT_FILE_SIZE") {
     return res.status(413).json({ error: "File exceeds the 25 MB limit." });
+  }
+  if (err.type === "entity.parse.failed") {
+    // NEW
+    return res.status(400).json({ error: "Request body is not valid JSON." });
   }
   next(err);
 });
