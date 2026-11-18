@@ -1,0 +1,407 @@
+{
+  "transcription": {
+    "transcript": "An interview is a form of journalism that is a structured conversation where one participant asks questions and the other provides answers. In common parlance, the word interview refers to a one-on-one between an interviewer and an interviewee. The interviewer asks questions to which the interviewee responds, usually providing information.",
+    "language": "en-US",
+    "duration_seconds": 16.9,
+    "confidence": 0.82,
+    "words": [
+      {
+        "word": "an",
+        "offset": 0.07,
+        "duration": 0.12,
+        "confidence": null
+      },
+      {
+        "word": "interview",
+        "offset": 0.19,
+        "duration": 0.48,
+        "confidence": null
+      },
+      {
+        "word": "is",
+        "offset": 0.67,
+        "duration": 0.12,
+        "confidence": null
+      },
+      {
+        "word": "a",
+        "offset": 0.79,
+        "duration": 0.04,
+        "confidence": null
+      },
+      {
+        "word": "form",
+        "offset": 0.83,
+        "duration": 0.28,
+        "confidence": null
+      },
+      {
+        "word": "of",
+        "offset": 1.11,
+        "duration": 0.08,
+        "confidence": null
+      },
+      {
+        "word": "journalism",
+        "offset": 1.19,
+        "duration": 0.64,
+        "confidence": null
+      },
+      {
+        "word": "that",
+        "offset": 1.83,
+        "duration": 0.2,
+        "confidence": null
+      },
+      {
+        "word": "is",
+        "offset": 2.03,
+        "duration": 0.12,
+        "confidence": null
+      },
+      {
+        "word": "a",
+        "offset": 2.15,
+        "duration": 0.04,
+        "confidence": null
+      },
+      {
+        "word": "structured",
+        "offset": 2.19,
+        "duration": 0.52,
+        "confidence": null
+      },
+      {
+        "word": "conversation",
+        "offset": 2.71,
+        "duration": 0.68,
+        "confidence": null
+      },
+      {
+        "word": "where",
+        "offset": 3.39,
+        "duration": 0.28,
+        "confidence": null
+      },
+      {
+        "word": "one",
+        "offset": 3.67,
+        "duration": 0.24,
+        "confidence": null
+      },
+      {
+        "word": "participant",
+        "offset": 3.91,
+        "duration": 0.64,
+        "confidence": null
+      },
+      {
+        "word": "asks",
+        "offset": 4.55,
+        "duration": 0.32,
+        "confidence": null
+      },
+      {
+        "word": "questions",
+        "offset": 4.87,
+        "duration": 0.64,
+        "confidence": null
+      },
+      {
+        "word": "and",
+        "offset": 5.55,
+        "duration": 0.16,
+        "confidence": null
+      },
+      {
+        "word": "the",
+        "offset": 5.71,
+        "duration": 0.16,
+        "confidence": null
+      },
+      {
+        "word": "other",
+        "offset": 5.87,
+        "duration": 0.2,
+        "confidence": null
+      },
+      {
+        "word": "provides",
+        "offset": 6.07,
+        "duration": 0.44,
+        "confidence": null
+      },
+      {
+        "word": "answers",
+        "offset": 6.51,
+        "duration": 0.52,
+        "confidence": null
+      },
+      {
+        "word": "in",
+        "offset": 7.11,
+        "duration": 0.2,
+        "confidence": null
+      },
+      {
+        "word": "common",
+        "offset": 7.31,
+        "duration": 0.32,
+        "confidence": null
+      },
+      {
+        "word": "parlance",
+        "offset": 7.63,
+        "duration": 0.6,
+        "confidence": null
+      },
+      {
+        "word": "the",
+        "offset": 8.31,
+        "duration": 0.12,
+        "confidence": null
+      },
+      {
+        "word": "word",
+        "offset": 8.43,
+        "duration": 0.28,
+        "confidence": null
+      },
+      {
+        "word": "interview",
+        "offset": 8.71,
+        "duration": 0.36,
+        "confidence": null
+      },
+      {
+        "word": "refers",
+        "offset": 9.07,
+        "duration": 0.44,
+        "confidence": null
+      },
+      {
+        "word": "to",
+        "offset": 9.51,
+        "duration": 0.2,
+        "confidence": null
+      },
+      {
+        "word": "a",
+        "offset": 9.71,
+        "duration": 0.04,
+        "confidence": null
+      },
+      {
+        "word": "one-on-one",
+        "offset": 9.75,
+        "duration": 0.48,
+        "confidence": null
+      },
+      {
+        "word": "between",
+        "offset": 10.23,
+        "duration": 0.4,
+        "confidence": null
+      },
+      {
+        "word": "an",
+        "offset": 10.63,
+        "duration": 0.08,
+        "confidence": null
+      },
+      {
+        "word": "interviewer",
+        "offset": 10.71,
+        "duration": 0.48,
+        "confidence": null
+      },
+      {
+        "word": "and",
+        "offset": 11.19,
+        "duration": 0.16,
+        "confidence": null
+      },
+      {
+        "word": "an",
+        "offset": 11.35,
+        "duration": 0.08,
+        "confidence": null
+      },
+      {
+        "word": "interviewee",
+        "offset": 11.43,
+        "duration": 0.56,
+        "confidence": null
+      },
+      {
+        "word": "the",
+        "offset": 12.11,
+        "duration": 0.2,
+        "confidence": null
+      },
+      {
+        "word": "interviewer",
+        "offset": 12.31,
+        "duration": 0.52,
+        "confidence": null
+      },
+      {
+        "word": "asks",
+        "offset": 12.83,
+        "duration": 0.32,
+        "confidence": null
+      },
+      {
+        "word": "questions",
+        "offset": 13.15,
+        "duration": 0.56,
+        "confidence": null
+      },
+      {
+        "word": "to",
+        "offset": 13.71,
+        "duration": 0.08,
+        "confidence": null
+      },
+      {
+        "word": "which",
+        "offset": 13.79,
+        "duration": 0.24,
+        "confidence": null
+      },
+      {
+        "word": "the",
+        "offset": 14.03,
+        "duration": 0.16,
+        "confidence": null
+      },
+      {
+        "word": "interviewee",
+        "offset": 14.19,
+        "duration": 0.44,
+        "confidence": null
+      },
+      {
+        "word": "responds",
+        "offset": 14.63,
+        "duration": 0.68,
+        "confidence": null
+      },
+      {
+        "word": "usually",
+        "offset": 15.39,
+        "duration": 0.48,
+        "confidence": null
+      },
+      {
+        "word": "providing",
+        "offset": 15.87,
+        "duration": 0.44,
+        "confidence": null
+      },
+      {
+        "word": "information",
+        "offset": 16.31,
+        "duration": 0.53,
+        "confidence": null
+      }
+    ]
+  },
+  "analysis": {
+    "language": "en",
+    "key_phrases": [
+      "one participant",
+      "common parlance",
+      "interview",
+      "form",
+      "journalism",
+      "conversation",
+      "questions",
+      "other",
+      "answers",
+      "word"
+    ],
+    "entities": [
+      {
+        "text": "interview",
+        "category": "Event",
+        "subcategory": null,
+        "confidence": 0.83
+      },
+      {
+        "text": "journalism",
+        "category": "Skill",
+        "subcategory": null,
+        "confidence": 0.77
+      },
+      {
+        "text": "one",
+        "category": "Quantity",
+        "subcategory": "Number",
+        "confidence": 0.8
+      },
+      {
+        "text": "participant",
+        "category": "PersonType",
+        "subcategory": null,
+        "confidence": 0.96
+      },
+      {
+        "text": "one",
+        "category": "Quantity",
+        "subcategory": "Number",
+        "confidence": 0.8
+      },
+      {
+        "text": "one",
+        "category": "Quantity",
+        "subcategory": "Number",
+        "confidence": 0.8
+      },
+      {
+        "text": "interviewer",
+        "category": "PersonType",
+        "subcategory": null,
+        "confidence": 0.99
+      },
+      {
+        "text": "interviewee",
+        "category": "PersonType",
+        "subcategory": null,
+        "confidence": 0.99
+      },
+      {
+        "text": "interviewer",
+        "category": "PersonType",
+        "subcategory": null,
+        "confidence": 0.99
+      },
+      {
+        "text": "interviewee",
+        "category": "PersonType",
+        "subcategory": null,
+        "confidence": 0.99
+      }
+    ],
+    "sentiment": {
+      "label": "neutral",
+      "confidence": 1,
+      "scores": {
+        "positive": 0,
+        "neutral": 1,
+        "negative": 0
+      }
+    },
+    "linked_entities": {
+      "available": true,
+      "items": []
+    }
+  },
+  "summary": {
+    "text": "Your memo mentions 10 key topics: one participant, common parlance, and interview. The overall tone is neutral. I detected 1 event, 1 skill, 3 quantities, and 5 roles.",
+    "audio_base64": "//NIxAAVkGIIFDJMBBWWkIe6YTbEA4...(trimmed)",
+    "audio_format": "audio/mp3",
+    "voice": "en-US-JennyNeural",
+    "char_count": 167
+  }
+}
