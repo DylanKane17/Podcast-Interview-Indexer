@@ -1,6 +1,7 @@
 const axios = require("axios");
 
 const MAX_CHARS = 5120; // Azure's limit for one document in a synchronous call
+const HANDSHAKE_RETRY_DELAY_MS = 300;
 
 class InputError extends Error {
   constructor(message) {
@@ -12,22 +13,36 @@ class InputError extends Error {
 // Call one Azure AI Language feature. `kind` picks the feature.
 async function callLanguage(kind, text, language) {
   const base = process.env.AZURE_LANGUAGE_ENDPOINT.replace(/\/+$/, "");
-  const response = await axios.post(
-    `${base}/language/:analyze-text`,
-    {
-      kind,
-      parameters: { modelVersion: "latest" },
-      analysisInput: { documents: [{ id: "1", language, text }] },
+  const url = `${base}/language/:analyze-text`;
+  const body = {
+    kind,
+    parameters: { modelVersion: "latest" },
+    analysisInput: { documents: [{ id: "1", language, text }] },
+  };
+  const options = {
+    params: { "api-version": "2023-04-01" },
+    headers: {
+      "Ocp-Apim-Subscription-Key": process.env.AZURE_LANGUAGE_KEY,
+      "Content-Type": "application/json",
     },
-    {
-      params: { "api-version": "2023-04-01" },
-      headers: {
-        "Ocp-Apim-Subscription-Key": process.env.AZURE_LANGUAGE_KEY,
-        "Content-Type": "application/json",
-      },
-      timeout: 30000,
-    },
-  );
+    timeout: 30000,
+  };
+
+  let response;
+  try {
+    response = await axios.post(url, body, options);
+  } catch (err) {
+    const code = err.code || err.cause?.code;
+    const message = err.message || err.cause?.message || "";
+    const resetDuringHandshake =
+      code === "ECONNRESET" &&
+      message.includes("before secure TLS connection was established");
+    if (!resetDuringHandshake) throw err;
+
+    // The request has not reached Azure yet, so one retry cannot duplicate analysis work.
+    await new Promise((resolve) => setTimeout(resolve, HANDSHAKE_RETRY_DELAY_MS));
+    response = await axios.post(url, body, options);
+  }
 
   const results = response.data.results;
   const doc = results.documents[0];

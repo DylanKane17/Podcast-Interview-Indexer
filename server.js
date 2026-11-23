@@ -1,8 +1,9 @@
-require("dotenv").config();
+require("dotenv").config({ path: "/Users/dylan/secrets/cs345.env" });
 
 const express = require("express");
 const multer = require("multer");
 const fs = require("fs");
+const path = require("path");
 const { convertToWav, transcribeWav } = require("./transcribe");
 const { analyzeText, errorReason } = require("./analyze");
 const { buildSummary, synthesize } = require("./tts"); // NEW
@@ -51,7 +52,7 @@ app.post("/analyze", async (req, res) => {
     if (err.code === "BAD_INPUT") {
       return res.status(400).json({ error: err.message });
     }
-    console.error(err);
+    console.error("Language analysis failed:", errorReason(err));
     res
       .status(502)
       .json({ error: "Language analysis failed.", detail: errorReason(err) });
@@ -104,7 +105,8 @@ app.post("/process", upload.single("audio"), async (req, res) => {
     if (err.code === "BAD_INPUT") {
       return res.status(422).json({ error: err.message, stage });
     }
-    console.error(`/process failed at ${stage}:`, err);
+    // Axios errors contain request headers; log only the sanitized error message.
+    console.error(`/process failed at ${stage}:`, errorReason(err));
     const status = stage === "language_analysis" ? 502 : 500;
     res.status(status).json({
       error: `Pipeline failed at stage: ${stage}.`,
@@ -126,6 +128,11 @@ app.use((err, req, res, next) => {
   }
   next(err);
 });
+
+const clientDistPath = path.join(__dirname, "client", "dist");
+if (fs.existsSync(clientDistPath)) {
+  app.use(express.static(clientDistPath));
+}
 
 const port = process.env.PORT || 3000;
 app.listen(port, () => console.log(`Listening on port ${port}`));
