@@ -5,3 +5,5 @@ temp_audio/
 *.mp3
 *.aiff
 .env
+__pycache__/
+*.pyc
