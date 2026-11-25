@@ -12,7 +12,10 @@ class BadAudioError extends Error {
 // Convert any audio file to 16 kHz, 16-bit, mono WAV using ffmpeg.
 function convertToWav(inputPath, outputPath) {
   return new Promise((resolve, reject) => {
-    const ff = spawn("ffmpeg", [
+    const bundled = require("ffmpeg-static");
+    const ffmpegPath =
+      bundled && require("fs").existsSync(bundled) ? bundled : "ffmpeg";
+    const ff = spawn(ffmpegPath, [
       "-y",
       "-i",
       inputPath,
