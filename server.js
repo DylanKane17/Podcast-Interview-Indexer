@@ -41,7 +41,7 @@ const episodes = []; // in-memory archive (resets when the app restarts)
 
 const app = express();
 app.use(express.json());
-app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static(path.join(__dirname, "client", "dist")));
 
 const upload = multer({
   dest: path.join(os.tmpdir(), "uploads"),
